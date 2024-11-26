@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo with Hyperlink Buttons</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+    .button {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: white;
+      background-color: #007BFF;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to the Demo Page</h1>
+  <p>Click on the buttons below to navigate to different sections:</p>
+
+  <!-- Hyperlink Buttons -->
+  <a href="#home" class="button">Home</a>
+  <a href="#about" class="button">About</a>
+  <a href="#contact" class="button">Contact</a>
+  <a href="https://example.com" class="button" target="_blank">External Link</a>
+
+  <!-- Sections -->
+  <div id="home" style="margin-top: 50px;">
+    <h2>Home Section</h2>
+    <p>This is the home section of the page.</p>
+  </div>
+
+  <div id="about" style="margin-top: 50px;">
+    <h2>About Section</h2>
+    <p>This is the about section of the page.</p>
+  </div>
+
+  <div id="contact" style="margin-top: 50px;">
+    <h2>Contact Section</h2>
+    <p>This is the contact section of the page.</p>
+  </div>
+</body>
+</html>
