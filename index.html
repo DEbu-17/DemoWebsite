@@ -11,13 +11,42 @@
     };
   </script>
 
-  <title>Demo with Hyperlink Buttons</title>
+  <title>Enhanced Demo Website</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 50px;
+      margin: 0;
+      padding: 0;
     }
+
+    /* Navigation Bar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #333;
+      padding: 10px 0;
+      color: white;
+      text-align: center;
+      z-index: 1000;
+    }
+    .navbar a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .navbar a:hover {
+      color: #007BFF;
+    }
+
+    /* Page Content */
+    .container {
+      margin-top: 70px;
+      padding: 20px;
+      text-align: center;
+    }
+
     .button {
       display: inline-block;
       margin: 10px;
@@ -33,33 +62,115 @@
     .button:hover {
       background-color: #0056b3;
     }
+
+    /* Accordion Section */
+    .accordion {
+      width: 80%;
+      margin: 20px auto;
+    }
+    .accordion-item {
+      background: #f1f1f1;
+      margin: 5px 0;
+      border: 1px solid #ddd;
+    }
+    .accordion-item h3 {
+      margin: 0;
+      padding: 15px;
+      background: #007BFF;
+      color: white;
+      cursor: pointer;
+    }
+    .accordion-item p {
+      padding: 15px;
+      display: none;
+      background: white;
+    }
+
+    /* Form */
+    form {
+      width: 80%;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background: #f9f9f9;
+    }
+    form input, form textarea, form button {
+      width: calc(100% - 20px);
+      margin: 10px 10px 20px;
+      padding: 10px;
+      font-size: 16px;
+    }
+    form button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    form button:hover {
+      background-color: #0056b3;
+    }
   </style>
 </head>
 <body>
-  <h1>Welcome to the Demo Page</h1>
-  <p>Click on the buttons below to navigate to different sections:</p>
-
-  <!-- Hyperlink Buttons -->
-  <a href="#home" class="button">Home</a>
-  <a href="#about" class="button" onclick="plausible('AboutButtonClick')">About</a>
-  <a href="#contact" class="button" onclick="plausible('ContactButtonClick')">Contact</a>
-  <a href="https://example.com" class="button" target="_blank" onclick="plausible('ExternalLinkClick')">External Link</a>
-
-  <!-- Sections -->
-  <div id="home" style="margin-top: 50px;">
-    <h2>Home Section</h2>
-    <p>This is the home section of the page.</p>
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="#faq">FAQ</a>
   </div>
 
-  <div id="about" style="margin-top: 50px;">
-    <h2>About Section</h2>
-    <p>This is the about section of the page.</p>
+  <!-- Main Content -->
+  <div class="container">
+    <h1>Welcome to the Enhanced Demo Website</h1>
+    <p>Click on the buttons below to navigate or interact with the site:</p>
+
+    <!-- Buttons with Custom Events -->
+    <a href="#home" class="button" onclick="plausible('HomeButtonClick')">Home</a>
+    <a href="#about" class="button" onclick="plausible('AboutButtonClick')">About</a>
+    <a href="#contact" class="button" onclick="plausible('ContactButtonClick')">Contact</a>
+    <a href="https://example.com" class="button" target="_blank" onclick="plausible('ExternalLinkClick')">External Link</a>
+
+    <!-- FAQ Accordion -->
+    <div id="faq" class="accordion">
+      <div class="accordion-item">
+        <h3 onclick="toggleAccordion(this)">What is this site?</h3>
+        <p>This is a demo site for exploring HTML, CSS, and Plausible Analytics integration.</p>
+      </div>
+      <div class="accordion-item">
+        <h3 onclick="toggleAccordion(this)">How does Plausible work?</h3>
+        <p>Plausible tracks events and page views in a privacy-friendly way using a lightweight script.</p>
+      </div>
+      <div class="accordion-item">
+        <h3 onclick="toggleAccordion(this)">Why use Plausible?</h3>
+        <p>It’s simple, privacy-focused, and easy to integrate into any website.</p>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <form id="contact-form" onsubmit="handleFormSubmit(event)">
+      <h2>Contact Us</h2>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
   </div>
 
-  <div id="contact" style="margin-top: 50px;">
-    <h2>Contact Section</h2>
-    <p>This is the contact section of the page.</p>
-    <p>sssssss111111111111111111111111111111111ss</p>
-  </div>
+  <script>
+    // Accordion Toggle Functionality
+    function toggleAccordion(element) {
+      const next = element.nextElementSibling;
+      next.style.display = next.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // Contact Form Submission Tracking
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      plausible('ContactFormSubmit');
+      alert('Form submitted successfully! Tracking event triggered.');
+    }
+  </script>
 </body>
 </html>
