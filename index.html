@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <script defer data-domain="demo-website-rose.vercel.app" src="https://plausible.io/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"></script>
-<script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
-
+  <script>
+    window.plausible = window.plausible || function() {
+      (window.plausible.q = window.plausible.q || []).push(arguments);
+    };
+  </script>
 
   <title>Demo with Hyperlink Buttons</title>
   <style>
@@ -39,9 +41,9 @@
 
   <!-- Hyperlink Buttons -->
   <a href="#home" class="button">Home</a>
-  <a href="#about" class="button">About</a>
-  <a href="#contact" class="button">Contact</a>
-  <a href="https://example.com" class="button" target="_blank">External Link</a>
+  <a href="#about" class="button" onclick="plausible('AboutButtonClick')">About</a>
+  <a href="#contact" class="button" onclick="plausible('ContactButtonClick')">Contact</a>
+  <a href="https://example.com" class="button" target="_blank" onclick="plausible('ExternalLinkClick')">External Link</a>
 
   <!-- Sections -->
   <div id="home" style="margin-top: 50px;">
