@@ -12,12 +12,16 @@
     };
   </script>
 
-  <title>Button Tracking Demo</title>
+  <title>Plausible Demo</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 20px;
+      padding: 0;
+    }
+
+    .container {
+      margin: 50px auto;
       text-align: center;
     }
 
@@ -27,36 +31,34 @@
       padding: 15px 30px;
       font-size: 18px;
       color: white;
+      background-color: #007BFF;
       border: none;
       border-radius: 5px;
       text-decoration: none;
       cursor: pointer;
     }
 
-    .button.red {
-      background-color: #FF0000;
-    }
-
-    .button.red:hover {
-      background-color: #CC0000;
-    }
-
-    .button.blue {
-      background-color: #007BFF;
-    }
-
-    .button.blue:hover {
+    .button:hover {
       background-color: #0056b3;
+    }
+
+    a {
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
-  <h1>Track Button Clicks in Plausible</h1>
-  <p>Click a button below to track its click in the Plausible dashboard.</p>
+  <!-- Main Page -->
+  <div class="container">
+    <h1>Welcome to the Plausible Analytics Demo</h1>
+    <p>Click the button below to navigate to a new page and track events.</p>
 
-  <!-- Buttons with Custom Tracking -->
-  <button class="button red" onclick="plausible('ButtonClick', { props: { button: 'Red Button' } })">Red Button</button>
-  <button class="button blue" onclick="plausible('ButtonClick', { props: { button: 'Blue Button' } })">Blue Button</button>
-  
+    <!-- Button to Navigate and Trigger Event -->
+    <a href="newpage.html" class="button" onclick="plausible('ButtonClick', { props: { button: 'NavigateButton' } })">Go to New Page</a>
+  </div>
+
+  <script>
+    // Additional JavaScript for tracking can be added here
+  </script>
 </body>
 </html>
