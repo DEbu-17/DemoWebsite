@@ -12,53 +12,43 @@
     };
   </script>
 
-  <title>Plausible Demo</title>
+  <title>New Page</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      text-align: center;
     }
 
     .container {
       margin: 50px auto;
-      text-align: center;
+      padding: 20px;
     }
 
     .button {
-      display: inline-block;
-      margin: 20px;
+      margin-top: 20px;
       padding: 15px 30px;
       font-size: 18px;
       color: white;
       background-color: #007BFF;
       border: none;
       border-radius: 5px;
-      text-decoration: none;
       cursor: pointer;
     }
 
     .button:hover {
       background-color: #0056b3;
     }
-
-    a {
-      text-decoration: none;
-    }
   </style>
 </head>
 <body>
-  <!-- Main Page -->
   <div class="container">
-    <h1>Welcome to the Plausible Analytics Demo</h1>
-    <p>Click the button below to navigate to a new page and track events.</p>
+    <h1>Welcome to the New Page</h1>
+    <p>This page view is tracked in Plausible Analytics.</p>
 
-    <!-- Button to Navigate and Trigger Event -->
-    <a href="newpage.html" class="button" onclick="plausible('ButtonClick', { props: { button: 'NavigateButton' } })">Go to New Page</a>
+    <!-- Button to Track Another Event -->
+    <button class="button" onclick="plausible('NewPageButtonClick')">Track Button Click</button>
   </div>
-
-  <script>
-    // Additional JavaScript for tracking can be added here
-  </script>
 </body>
 </html>
